@@ -41,6 +41,7 @@ func handleFun(stated chan bool, exit chan bool,
 	}
 }
 
+// count : 线程个数 process: 处理函数
 func NewPool(count uint16, process Process) *ThreadPool {
 	q := queue.NewFifoQueue(10)
 	return &ThreadPool{count, q, process, make([]chan bool, count),
